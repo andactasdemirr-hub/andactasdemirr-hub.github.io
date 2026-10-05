@@ -3,25 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Email Verified | Sales Research Pro</title>
+  <meta name="robots" content="noindex,nofollow">
+  <title>Email Verification | Sales Research Pro</title>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: radial-gradient(circle at top right, rgba(92, 73, 230, 0.45), transparent 35%), linear-gradient(145deg, #081b3a, #2839a8); color: #172033; }
-    .card { width: min(620px, 100%); background: #ffffff; border-radius: 24px; padding: 46px 34px; text-align: center; box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24); }
+    .card { width: min(620px, 100%); background: #fff; border-radius: 24px; padding: 46px 34px; text-align: center; box-shadow: 0 28px 80px rgba(0,0,0,.24); }
     .brand { color: #102a56; font-size: 20px; font-weight: 850; margin-bottom: 30px; }
-    .check { width: 76px; height: 76px; margin: 0 auto 22px; display: grid; place-items: center; border-radius: 50%; background: #ecfdf3; color: #067647; font-size: 40px; font-weight: 900; }
-    h1 { margin: 0; font-size: 32px; letter-spacing: -0.5px; }
-    p { max-width: 460px; margin: 15px auto 0; color: #667085; font-size: 16px; line-height: 1.65; }
+    .icon { width: 76px; height: 76px; margin: 0 auto 22px; display: grid; place-items: center; border-radius: 50%; font-size: 40px; font-weight: 900; }
+    .success { background: #ecfdf3; color: #067647; }
+    .error { background: #fef3f2; color: #b42318; }
+    h1 { margin: 0; font-size: 32px; letter-spacing: -.5px; }
+    p { max-width: 480px; margin: 15px auto 0; color: #667085; font-size: 16px; line-height: 1.65; }
     .note { margin-top: 28px; padding: 16px 18px; border-radius: 13px; background: #f5f7ff; color: #344054; font-size: 14px; font-weight: 600; }
   </style>
 </head>
 <body>
   <main class="card">
     <div class="brand">Sales Research Pro</div>
-    <div class="check">✓</div>
-    <h1>Email verified</h1>
-    <p>Your Sales Research Pro account is ready. You can now return to the Chrome extension and sign in.</p>
-    <div class="note">You can safely close this page.</div>
+    <div id="icon" class="icon success">✓</div>
+    <h1 id="title">Email verified</h1>
+    <p id="message">Your Sales Research Pro account is ready. You can now return to the Chrome extension and sign in.</p>
+    <div id="note" class="note">You can safely close this page.</div>
   </main>
+
+  <script>
+    (() => {
+      const query = new URLSearchParams(window.location.search);
+      const hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+      const error = query.get('error') || hash.get('error');
+      const errorCode = query.get('error_code') || hash.get('error_code');
+      const errorDescription = query.get('error_description') || hash.get('error_description');
+
+      if (!error && !errorCode) return;
+
+      const icon = document.getElementById('icon');
+      const title = document.getElementById('title');
+      const message = document.getElementById('message');
+      const note = document.getElementById('note');
+
+      icon.className = 'icon error';
+      icon.textContent = '!';
+      document.title = 'Email Verification Failed | Sales Research Pro';
+
+      if (errorCode === 'otp_expired') {
+        title.textContent = 'Verification link expired';
+        message.textContent = 'This email verification link is invalid or has expired. Return to the Sales Research Pro extension and request a new verification email or register again if needed.';
+      } else {
+        title.textContent = 'Email verification failed';
+        message.textContent = errorDescription
+          ? decodeURIComponent(errorDescription.replace(/\+/g, ' '))
+          : 'We could not verify this email address. Please return to the Sales Research Pro extension and try again.';
+      }
+
+      note.textContent = 'Your email was not verified by this link.';
+    })();
+  </script>
 </body>
 </html>
