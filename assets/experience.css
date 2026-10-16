@@ -1,0 +1,17 @@
+
+.srp-language{display:flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,.15);border-radius:11px;background:#101e34}
+.srp-language button{background:transparent;border:0;border-radius:8px;color:#b8c7e3;padding:6px 9px;font-weight:800;cursor:pointer}.srp-language button.active{background:#5b8cff;color:#07111f}
+.srp-community{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border-radius:12px;background:#1594d4;color:white;font-weight:800;text-decoration:none}
+.srp-community:hover{filter:brightness(1.1)}
+.srp-extra-section{max-width:1180px;margin:0 auto;padding:65px 24px}.srp-extra-section h2{font-size:clamp(28px,4vw,42px);line-height:1.13;margin:12px 0}.srp-extra-section p{color:#a9b5c7}
+.srp-instruction{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.srp-instruction article{background:#11233b;border:1px solid rgba(255,255,255,.12);padding:24px;border-radius:18px}
+.srp-instruction b{color:#89a9ff}.srp-instruction h3{margin:8px 0;font-size:18px}.srp-instruction p{font-size:14px;margin:0}
+.srp-url{padding:14px;background:#071322;border:1px solid #405779;border-radius:11px;color:#9cc4ff;overflow-wrap:anywhere;font-family:ui-monospace,monospace;font-size:12px;margin-top:15px}
+.srp-visual{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:25px}.srp-visual-card{border:1px solid rgba(255,255,255,.12);border-radius:18px;background:linear-gradient(160deg,#152b4b,#0b1728);padding:25px}.srp-bars{display:grid;gap:15px;margin-top:25px}.srp-bar{height:11px;border-radius:30px;background:#263a55;overflow:hidden}.srp-bar i{display:block;height:100%;border-radius:30px;background:linear-gradient(90deg,#5885ff,#48d4b0)}.srp-mini-stat{font-size:12px;color:#a9b5c7;margin-top:9px}
+.srp-checkout-backdrop{position:fixed;inset:0;z-index:99999;background:rgba(2,8,20,.85);display:none;place-items:center;padding:18px;backdrop-filter:blur(8px)}.srp-checkout-backdrop.open{display:grid}
+.srp-checkout-card{width:min(440px,100%);background:#13233b;color:white;border:1px solid #3a4b67;border-radius:20px;padding:27px;box-shadow:0 25px 90px #0009}
+.srp-checkout-card h2{font-size:23px;margin:0 0 7px}.srp-checkout-card p{font-size:13px;color:#aebdd0}.srp-checkout-card label{display:block;font-size:13px;margin:13px 0 5px}.srp-checkout-card input{display:block;width:100%;background:#0b1728;border:1px solid #52637e;border-radius:9px;color:#fff;padding:12px;font-size:15px}
+.srp-checkout-card button{cursor:pointer;border:0;border-radius:10px;padding:12px;font-weight:800}.srp-checkout-primary{background:#5b8cff;color:#07111f;width:100%;margin-top:18px}.srp-checkout-close{background:#293b55;color:#fff;width:100%;margin-top:8px}.srp-checkout-status{font-size:12px;color:#ffd89c;margin-top:12px;min-height:18px}
+.srp-buy{display:block;width:100%;margin-top:22px;background:#5b8cff;color:#07111f;border:0;border-radius:12px;padding:13px;font-weight:850;cursor:pointer}
+@media(max-width:760px){.srp-instruction,.srp-visual{grid-template-columns:1fr}.srp-extra-section{padding:45px 18px}.srp-language{margin-left:auto}}
