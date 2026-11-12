@@ -21,8 +21,8 @@ radial-gradient(circle at 10% 15%,rgba(67,214,161,.08),transparent 28%),var(--bg
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:auto;padding:0 24px}
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
-.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#6b96ff,#3f6ff0);display:grid;place-items:center;font-size:13px;font-weight:900;box-shadow:0 10px 30px rgba(91,140,255,.28)}.logo-img{width:40px;height:40px;display:block;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(91,140,255,.24))}
+.brand{display:flex;align-items:center;gap:13px;font-size:19px;font-weight:800;letter-spacing:-.025em}
+.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#6b96ff,#3f6ff0);display:grid;place-items:center;font-size:13px;font-weight:900;box-shadow:0 10px 30px rgba(91,140,255,.28)}.logo-img{width:48px;height:48px;display:block;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(91,140,255,.24))}
 .navlinks{display:flex;align-items:center;gap:26px;color:#b8c3d3;font-size:14px}
 .navlinks a:hover{color:#fff}
 .navcta{padding:10px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);color:#fff}
@@ -80,9 +80,12 @@ summary{cursor:pointer;font-weight:750;font-size:14px}details p{color:var(--mute
 .footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#7f8da2;font-size:12px}
 .footer-top{display:flex;justify-content:space-between;gap:25px;align-items:flex-start}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a:hover{color:#fff}.fine{max-width:680px;margin-top:15px}
-.partner-card{max-width:520px;min-height:150px;margin:0 auto;display:flex;align-items:center;justify-content:center;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(18,35,58,.78),rgba(12,25,43,.82));box-shadow:0 18px 48px rgba(0,0,0,.14)}
-.partner-card a{display:inline-flex;align-items:center;justify-content:center;max-width:100%}
-.partner-card img{display:block;width:200px;max-width:100%;height:auto}
+.footer-partners{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:28px 0 18px;padding:20px 24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}
+.footer-partners-copy{display:flex;flex-direction:column;gap:5px;color:#dce5f2}
+.footer-partners-copy .section-kicker{font-size:10px;font-weight:800;letter-spacing:.12em;color:#a9b5c7}
+.footer-partners>a{display:inline-flex;align-items:center;justify-content:center;max-width:100%}
+.footer-partners img{display:block;width:200px;max-width:100%;height:auto}
+@media(max-width:620px){.footer-partners{align-items:flex-start;flex-direction:column;padding:18px}.brand{font-size:17px}.logo-img{width:44px;height:44px}}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:40px}.grid3,.pricing{grid-template-columns:1fr}.workflow{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}.callout{align-items:flex-start;flex-direction:column}}
 @media(max-width:620px){.container{padding:0 18px}.navlinks a:not(.navcta){display:none}.hero{padding-top:52px}.section{padding:62px 0}h2{font-size:31px}.workflow{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.footer-top{flex-direction:column}}
 </style>
@@ -94,7 +97,6 @@ summary{cursor:pointer;font-weight:750;font-size:14px}details p{color:var(--mute
 <div class="navlinks">
 <a href="./how-it-works/">How it works</a>
 <a href="#features">Features</a>
-<a href="#partners" data-srp-en="Partners" data-srp-tr="İş ortaklarımız">Partners</a>
 <a href="./pricing/" class="navcta">View plans</a>
 </div>
 </nav>
@@ -177,17 +179,6 @@ summary{cursor:pointer;font-weight:750;font-size:14px}details p{color:var(--mute
 <p style="text-align:center;color:#7f8da2;font-size:12px;margin:20px 0 0">Payments, billing and applicable taxes are securely handled by Paddle, our Merchant of Record.</p>
 </section>
 
-<section class="container section" id="partners">
-<div class="section-head">
-<div class="section-kicker" data-srp-en="PARTNERS &amp; INTEGRATIONS" data-srp-tr="İŞ ORTAKLARI VE ENTEGRASYONLAR">PARTNERS &amp; INTEGRATIONS</div>
-<h2 data-srp-en="Our Partners" data-srp-tr="İş Ortaklarımız">Our Partners</h2>
-<p data-srp-en="Find Sales Research Pro on SaaS Browser and explore our product listing." data-srp-tr="Sales Research Pro'yu SaaS Browser üzerinde keşfedin ve ürün sayfamızı ziyaret edin.">Find Sales Research Pro on SaaS Browser and explore our product listing.</p>
-</div>
-<div class="partner-card">
-<a href="https://saasbrowser.com/en/saas/1761858/sales-research-pro" target="_blank" rel="noopener noreferrer"><img src="https://static-files.saasbrowser.com/saas-browser-badge-13.svg" alt="Sales Research Pro - SaaS discovery platform" width="200" /></a>
-</div>
-</section>
-
 <section class="container section">
 <div class="section-head">
 <div class="section-kicker">Questions</div>
@@ -207,6 +198,13 @@ summary{cursor:pointer;font-weight:750;font-size:14px}details p{color:var(--mute
 <div><strong style="color:#fff">Sales Research Pro</strong><div style="margin-top:5px">Marketplace product research, made clearer.</div></div>
 <div class="footer-links"><a href="./how-it-works/">How it works</a><a href="./pricing/">View plans</a><a href="./terms/">Terms</a><a href="./privacy/">Privacy</a><a href="./refund/">Refunds</a><a href="mailto:support@salesresearchpro.com">Support</a>
 </div>
+</div>
+<div class="footer-partners" id="footer-partners">
+<div class="footer-partners-copy">
+<div class="section-kicker" data-srp-en="OUR PARTNERS" data-srp-tr="İŞ ORTAKLARIMIZ">OUR PARTNERS</div>
+<strong data-srp-en="Discover Sales Research Pro on SaaS Browser" data-srp-tr="Sales Research Pro'yu SaaS Browser'da keşfedin">Discover Sales Research Pro on SaaS Browser</strong>
+</div>
+<a href="https://saasbrowser.com/en/saas/1761858/sales-research-pro" target="_blank" rel="nofollow noopener noreferrer"><img src="https://static-files.saasbrowser.com/saas-browser-badge-16.svg" alt="Sales Research Pro - Discover new software products" width="200" /></a>
 </div>
 <div class="fine">Operated by Andaç Taşdemir · support@salesresearchpro.com. Sales Research Pro is an independent research service and is not affiliated with, endorsed by or sponsored by eBay, Amazon or other marketplaces.</div>
 </div>
